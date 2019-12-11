@@ -1,8 +1,8 @@
 package main.kotlin.aoc.day02
 
-import java.io.File
+import main.kotlin.aoc.readText
 
-fun main(args: Array<String>) {
+fun main() {
     part1()
     part2()
 }
@@ -23,7 +23,7 @@ fun part2() {
 }
 
 fun processIntCode(noun: Int, verb: Int): Int {
-    val input = getInput().split(",").map { it.toInt() }.toMutableList()
+    val input = readText("src/main/kotlin/aoc/day02/Input.txt").split(",").map { it.toInt() }.toMutableList()
 
     // Change starting values
     input[1] = noun
@@ -48,5 +48,3 @@ fun processIntCode(noun: Int, verb: Int): Int {
     }
     return input[0]
 }
-
-fun getInput(): String = File("src/main/kotlin/aoc/day02/Input.txt").readText()
